@@ -1,0 +1,8 @@
+RewriteEngine On
+# This will enable the Rewrite capabilities
+
+RewriteCond %{HTTPS} !=on
+# This checks to make sure the connection is not already HTTPS
+
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R=301,L]
+# This rule will redirect users from their original location, to the same location but using HTTPS.
